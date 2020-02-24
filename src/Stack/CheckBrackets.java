@@ -10,7 +10,7 @@ public class CheckBrackets {
     public static void main(String[] args) {
 //        Scanner scanner = new Scanner(System.in);
 //        String brackets = scanner.nextLine();
-        String brackets = "()[([ (    fsfjskl   )]]";
+        String brackets = "foo(bari)";
         System.out.println((check_brackets(brackets)));
     }
 
@@ -18,23 +18,30 @@ public class CheckBrackets {
         Stack<Character> stack = new Stack<>();
         Stack<Integer> stackCounter = new Stack<>();
         char[] elements = string.toCharArray();
-        char top;
+        int top = 0;
         int counter = 0;
 
         for (int i = 0; i < string.length(); i++) {
+            counter++;
             if (elements[i] == '[' || elements[i] == '(') {
+                top++;
                 stack.push(elements[i]);
-                stackCounter.push(++counter);
-            } else if (stack.isEmpty()) {
-                throw new RuntimeException("Stack is empty!");
+                stackCounter.push(top);
             } else if (elements[i] == ']') {
-                if (stack.pop() != '[') throw new RuntimeException("Incorrect value for the bracket " + stackCounter.peek());
+                if (stack.isEmpty()) {
+                    throw new RuntimeException("The ']' bracket number " + counter + " doesn't have a pair");
+                } else if (stack.peek() == '[') {
+                    stack.pop();
+                    stackCounter.pop();
+                }else{ throw new RuntimeException("The " + stack.peek() + " bracket number " + stackCounter.peek() + " doesn't have a pair");}
+            }  else if (elements[i] == ')'){if (stack.isEmpty()) {
+                throw new RuntimeException("The ')' bracket number " + counter + " doesn't have a pair");
+            } else if (stack.peek() == '(') {
+                stack.pop();
                 stackCounter.pop();
-            } else if (elements[i] == ')') {
-                if (stack.pop() != '(') throw new RuntimeException("Incorrect value for the bracket " + stackCounter.peek());
-                stackCounter.pop();
-            }
+            }else{ throw new RuntimeException("The " + stack.peek() + " bracket number " + stackCounter.peek() + " doesn't have a pair");}}
         }
-        if(stack.isEmpty()){return "Success!";}else throw new RuntimeException("Incorrect value for the bracket " + stackCounter.peek());
+        if(top == 0) throw new RuntimeException("No brackets!");
+        if(stack.isEmpty()){return "Success";}else throw new RuntimeException("The '" + stack.peek() + "' bracket number " + stackCounter.peek() + " doesn't have a pair");
     }
 }
