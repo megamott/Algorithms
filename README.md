@@ -1,4 +1,4 @@
-##Задачи из курса ["Алгоритмы: теория и практика. Структуры данных"](https://stepik.org/course/1547/syllabus)
+## Задачи из курса ["Алгоритмы: теория и практика. Структуры данных"](https://stepik.org/course/1547/syllabus)
 
 [01](https://github.com/megamott/JavaAlgorithms/blob/master/src/stepik_algorithms_structures/Brackets.java) Баланс скобок.  
 02 Определить высоту небинарного дерева.  
