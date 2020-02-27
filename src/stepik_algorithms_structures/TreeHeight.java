@@ -7,9 +7,9 @@ import java.util.*;
  */
 public class TreeHeight {
     public static void main(String[] args) {
-        int vertexQuantity = 5;
+        int vertexQuantity = 10;
         Map<Integer, Integer> map = new HashMap<>();
-        int[] tree = {4, -1, 4, 1, 1};
+        int[] tree = {9, 7, 5, 5, 2, 9, 9, 9, 2, -1};
         for (int i = 0; i < vertexQuantity; i++) {
             map.put(i, tree[i]);
         }
@@ -21,6 +21,8 @@ public class TreeHeight {
         }
 
         graph.SetContacts();
+
+        System.out.println(graph.getHeight(graph.getRoot()));
 
         System.out.println(graph);
     }
@@ -37,6 +39,10 @@ class Graph {
         } else {
             this.tree.add(node);
         }
+    }
+
+    public Node getRoot() {
+        return root;
     }
 
     private Node getParentByKey(int parentKey) {
@@ -84,6 +90,19 @@ class Graph {
             outputString.append("\n");
         }
         return outputString.toString();
+    }
+
+    public int getHeight(Node node) {
+        if (node == null) return 0;
+        List<Integer> heights = new LinkedList<>();
+        int childrenCount = node.getChildren().size();
+        for (int i = 0; i < childrenCount; i++) {
+            heights.add(getHeight(node.getChildren().get(i)));
+        }
+        if (!heights.isEmpty()) {
+            heights.add(1 + Collections.max(heights));
+        } else return 1;
+        return Collections.max(heights);
     }
 }
 
