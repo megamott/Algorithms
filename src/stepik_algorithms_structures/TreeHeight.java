@@ -55,35 +55,38 @@ class Graph {
         ) {
             if (node != root) {
                 node.setParent(getParentByKey(node.getParentKey()));
+                node.getParent().getChildren().add(node);
             }
         }
     }
 
     @Override
     public String toString() {
-        StringBuilder result = new StringBuilder();
-        for (Node n : tree) {
-            result.append("Узел с ключом " + n.getKey());
-
-            if (n.getParent() != null) {
-                result.append(", родитель - узел с ключом " + n.getParent().getKey());
+        StringBuilder outputString = new StringBuilder();
+        for (Node node : tree
+        ) {
+            outputString.append("Node " + node.getKey());
+            if (node.getParent() != null) {
+                outputString.append(" with parent: " + node.getParentKey());
             } else {
-                result.append(", корневой узел");
+                outputString.append(" is root");
             }
-
-            if (!n.getChildren().isEmpty()) {
-                result.append(", потомки - ");
-                for (Node ch : n.getChildren()) {
-                    result.append(ch.getKey() + ", ");
+            if (!node.getChildren().isEmpty()) {
+                outputString.append(" and has children: ");
+                for (Node child : node.getChildren()
+                ) {
+                    outputString.append(child.getKey());
+                    outputString.append(" ");
                 }
-                result.append("\n");
             } else {
-                result.append(", потомков нет" + "\n");
+                outputString.append(" hasn't got children");
             }
+            outputString.append("\n");
         }
-        return result.toString();
+        return outputString.toString();
     }
 }
+
 
 class Node {
     private int key, parentKey;
