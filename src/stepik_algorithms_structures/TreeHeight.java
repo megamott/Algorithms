@@ -1,3 +1,28 @@
+/*
+Формата ввода.
+Первая строка содержит натуральное число n.
+Вторая строка содержит n целых неотрицательных чисел parent[0]...parentn[n-1].
+Для каждого 0 <= i <= n-1, parent[i] — родитель вершины i;
+если parent[i] = -1, то i является корнем.
+Гарантируется, что корень ровно один. Гарантируется, что данная последовательность задает дерево.
+Формат вывода.
+Высота дерева.
+Sample Input:
+10
+9 7 5 5 2 9 9 9 2 -1
+Sample Output:
+4
+Sample Input:
+5
+4 -1 4 1 1
+Sample Output:
+3
+Sample Input:
+5
+-1 0 4 0 3
+Sample Output:
+4
+*/
 package stepik_algorithms_structures;
 
 import java.util.*;
@@ -7,6 +32,7 @@ import java.util.*;
  */
 public class TreeHeight {
     public static void main(String[] args) {
+//        Scanner scanner = new Scanner(System.in);
         int vertexQuantity = 10;
         Map<Integer, Integer> map = new HashMap<>();
         int[] tree = {9, 7, 5, 5, 2, 9, 9, 9, 2, -1};
@@ -19,19 +45,25 @@ public class TreeHeight {
         ) {
             graph.addNode(new Node(entry.getKey(), entry.getValue()));
         }
-
+        //Установление связей
         graph.SetContacts();
-
-        System.out.println(graph.getHeight(graph.getRoot()));
-
+        //Проверка
         System.out.println(graph);
+        System.out.println(graph.getHeight(graph.getRoot()));
     }
 }
 
+/**
+ * Класс, задающий дерево
+ */
 class Graph {
     private Node root;
     private List<Node> tree = new LinkedList<>();
 
+    /**
+     * Добавление узла в дерево
+     * @param node
+     */
     void addNode(Node node) {
         if (node.getParentKey() == -1) {
             this.root = node;
@@ -41,10 +73,18 @@ class Graph {
         }
     }
 
+    /**
+     * Получение корня дерева
+     */
     public Node getRoot() {
         return root;
     }
 
+    /**
+     * Получение родителя по ключу родителя
+     * @param parentKey
+     * @return
+     */
     private Node getParentByKey(int parentKey) {
         Node parentNode = null;
         for (Node node : tree
@@ -56,6 +96,11 @@ class Graph {
         return parentNode;
     }
 
+    /**
+     * Связывание узла с родителем
+     * Опрделение детей узла
+     * Установление связей между узлами
+     */
     void SetContacts() {
         for (Node node : tree
         ) {
@@ -92,6 +137,11 @@ class Graph {
         return outputString.toString();
     }
 
+    /**
+     * Получение высоты дерева рекурсивным методом
+     * @param node
+     * @return
+     */
     public int getHeight(Node node) {
         if (node == null) return 0;
         List<Integer> heights = new LinkedList<>();
@@ -106,7 +156,9 @@ class Graph {
     }
 }
 
-
+/**
+ * Класс, задающий узел
+ */
 class Node {
     private int key, parentKey;
     private Node parent;
