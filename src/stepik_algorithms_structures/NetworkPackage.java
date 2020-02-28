@@ -7,7 +7,7 @@ import java.util.concurrent.ArrayBlockingQueue;
 /**
  * @author Matvey
  */
-public class networkPackage {
+public class NetworkPackage {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         int size = in.nextInt();
@@ -20,15 +20,13 @@ public class networkPackage {
 }
 
 class Buffer {
-    private int size;
     private Queue<Integer> stock;
 
-    public Buffer(int size) {
-        this.size = size;
+    Buffer(int size) {
         this.stock = new ArrayBlockingQueue<>(size);
     }
 
-    public Queue<Integer> getStock() {
+    Queue<Integer> getStock() {
         return stock;
     }
 
