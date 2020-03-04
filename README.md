@@ -5,5 +5,5 @@
 [03](https://github.com/megamott/JavaAlgorithms/blob/master/src/stepik_algorithms_structures/NetworkPackage.java) Симулятор обработки сетевых пакетов.  
 [04](https://github.com/megamott/JavaAlgorithms/blob/master/src/stepik_algorithms_structures/StackWithMax.java) Стек с поддержкой максимума.  
 [05](https://github.com/megamott/JavaAlgorithms/blob/master/src/stepik_algorithms_structures/SlidingWindow.java) Максимум в скользящем окне.  
-06 Построение кучи.  
+[06](https://github.com/megamott/JavaAlgorithms/blob/master/src/stepik_algorithms_structures/MinHeapBuilding.java) Построение кучи.  
 07 Телефонная книга.  
