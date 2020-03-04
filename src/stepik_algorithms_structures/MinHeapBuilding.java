@@ -68,11 +68,11 @@ class HeapSort {
     //Счётчик перестановок
     private int counter = 0;
 
-    public StringBuilder getList() {
+    StringBuilder getList() {
         return list;
     }
 
-    public int getCounter() {
+    int getCounter() {
         return counter;
     }
 
