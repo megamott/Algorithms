@@ -8,4 +8,4 @@
 [06](https://github.com/megamott/JavaAlgorithms/blob/master/src/stepik_algorithms_structures/MinHeapBuilding.java) Построение кучи.  
 [07](https://github.com/megamott/JavaAlgorithms/blob/master/src/stepik_algorithms_structures/TableJoin.java) Объединение таблиц.  
 [08](https://github.com/megamott/JavaAlgorithms/blob/master/src/stepik_algorithms_structures/TelephoneBook.java) Телефонная книга.   
-09 Хеширование цепочками  
+09 Хеширование цепочками.  
