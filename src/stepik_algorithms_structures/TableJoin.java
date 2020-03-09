@@ -115,6 +115,7 @@ public class TableJoin {
  * База данных
  * Содержит массив таблиц
  * Содержит массив высот(размеров таблиц)
+ * Содержит количество таблиц
  */
 class DataBase {
     private int tableNumber;
