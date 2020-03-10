@@ -1,3 +1,65 @@
+/*
+Хеширование цепочками — один из наиболее популярных методов реализации
+хеш-таблиц на практике.
+Ваша цель в данной задаче — реализовать такую схему,
+используя таблицу с m ячейками и полиномиальной хеш-функцией на строках.
+Реализовать фкнкции:
+• add string: добавить строку string в таблицу. Если такая
+строка уже есть, проигнорировать запрос;
+• del string: удалить строку string из таблицы. Если такой
+строки нет, проигнорировать запрос;
+• find string: вывести «yes» или «no» в зависимости от того,
+есть в таблице строка string или нет;
+• check i: вывести i-й список (используя пробел в качестве разделителя);
+если i-й список пуст, вывести пустую строку.
+При добавлении строки в цепочку, строка должна добавляться в начало цепочки.
+Формат входа. Первая строка размер хеш-таблицы m. Следующая
+строка содержит количество запросов n. Каждая из последующих n строк содержит запрос одного из перечисленных выше
+четырёх типов.
+Формат выхода. Для каждого из запросов типа find и check выведите результат в отдельной строке.
+Вход:
+5
+12
+add world
+add HellO
+check 4
+find World
+find world
+del world
+check 4
+del HellO
+add luck
+add GooD
+check 2
+del good
+Выход:
+HellO world
+no
+yes
+HellO
+GooD luck
+ASCII коды букв ’w’, ’o’, ’r’, ’l’, ’d’ равны 119, 111, 114, 108, 100,
+соответственно.
+Пример.
+Вход:
+4
+8
+add test
+add test
+find test
+del test
+find test
+find Test
+add Test
+find Test
+Выход:
+yes
+no
+no
+yes
+*/
+
+
 package stepik_algorithms_structures;
 
 import java.math.BigInteger;
@@ -30,6 +92,13 @@ public class ChainingHashTable {
     }
 }
 
+/**
+ * Класс Хеш-таблица
+ * Содержит массив листов строк
+ * Размер этого массива
+ * Константы p и x, необходимые для реализации хеш-функции
+ * p в виде BigInteger
+ */
 class HashTable {
     private LinkedList[] table;
     private int size;
@@ -47,6 +116,10 @@ class HashTable {
         return table;
     }
 
+    /**
+     * Добавление слова
+     * @param word - проверяемое слово
+     */
     public void add(String word) {
         int myHashCode = MyHashCode(word, size);
         if (table[myHashCode] == null) {
@@ -58,6 +131,10 @@ class HashTable {
         }
     }
 
+    /**
+     * Поиск слова
+     * @param word - проверяемое слово
+     */
     public void find(String word) {
         if ((table[MyHashCode(word, size)] != null) && (compareElements(word))) {
             System.out.println("yes");
@@ -66,6 +143,11 @@ class HashTable {
         }
     }
 
+    /**
+     * Удаление слова
+     * Проверяется на то, существует ли корзина с таким хешем
+     * @param word - проверяемое слово
+     */
     public void del(String word) {
         if (table[MyHashCode(word, size)] != null) {
             int myHashCode = MyHashCode(word, size);
@@ -75,6 +157,12 @@ class HashTable {
         }
     }
 
+    /**
+     * Вывод всех элментов корзины
+     * Проверяется на то, существует ли корзина с таким хешем и не пуста ли она
+     * В противном случае выаодится пустая строка
+     * @param number - номер корзины
+     */
     public void check(int number){
         if ((table[number] != null) && (table[number].size() != 0)){
             for (int i = 0; i < table[number].size(); i++) {
@@ -84,6 +172,11 @@ class HashTable {
         }else System.out.println(" ");
     }
 
+    /**
+     * Сравнение элементов по их хеш-коду
+     * @param word
+     * @return
+     */
     private boolean compareElements(String word) {
         int myHashCode = MyHashCode(word, size);
         for (int i = 0; i < table[myHashCode].size(); i++) {
@@ -92,6 +185,12 @@ class HashTable {
         return false;
     }
 
+    /**
+     * Опрделение хеш функции слова
+     * @param word
+     * @param size - размер массива листов
+     * @return
+     */
     private int MyHashCode(String word, int size) {
         long hash = 0;
         int length = word.length() - 1;
@@ -110,11 +209,16 @@ class HashTable {
         BigInteger myHash = BigInteger.valueOf(hash);
         BigInteger resultHash = myHash.add(resultLastElement);
         BigInteger resultHashModP = mod(resultHash);
-        BigInteger newSize = BigInteger.valueOf((long)size);
+        BigInteger newSize = BigInteger.valueOf(size);
         BigInteger resultHashModM = resultHashModP.mod(newSize);
         return resultHashModM.intValue();
     }
 
+    /**
+     * Взять элемент по модулю p
+     * @param number
+     * @return
+     */
     private BigInteger mod(BigInteger number) {
         BigInteger var1 = number.mod(bigP);
         BigInteger var2 = var1.add(bigP);
