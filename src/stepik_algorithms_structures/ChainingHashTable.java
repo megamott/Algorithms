@@ -1,5 +1,6 @@
 package stepik_algorithms_structures;
 
+import java.math.BigInteger;
 import java.util.LinkedList;
 import java.util.Scanner;
 
@@ -73,7 +74,7 @@ class HashTable {
     }
 
     public void check(int number){
-        if ((table[number] != null) && (table[number].getFirst() != null)){
+        if ((table[number] != null) && (table[number].size() != 0)){
             for (int i = 0; i < table[number].size(); i++) {
                 System.out.print(table[number].get(i) + " ");
             }
