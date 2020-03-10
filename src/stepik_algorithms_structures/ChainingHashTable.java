@@ -15,14 +15,14 @@ public class ChainingHashTable {
         for (int i = 0; i < commandNumber; i++) {
             String command = in.next();
             if (command.equals("add")){
-                String word = in.next();
-                hashTable.add(word);
+                String word = in.nextLine();
+                hashTable.add(word.substring(1));
             }else if(command.equals("find")){
-                String word = in.next();
-                hashTable.find(word);
+                String word = in.nextLine();
+                hashTable.find(word.substring(1));
             }else if(command.equals("del")){
-                String word = in.next();
-                hashTable.del(word);
+                String word = in.nextLine();
+                hashTable.del(word.substring(1));
             }else if(command.equals("check")){
                 hashTable.check(in.nextInt());
             }
@@ -34,11 +34,13 @@ class HashTable {
     private LinkedList[] table;
     private int size;
     private final long p = 1000000007;
-    private final int x = 263;
+    private final long x = 263;
+    private BigInteger bigP;
 
     public HashTable(int size) {
         this.size = size;
         this.table = new LinkedList[size];
+        this.bigP = BigInteger.valueOf(p);
     }
 
     public LinkedList[] getTable() {
@@ -94,15 +96,30 @@ class HashTable {
         long hash = 0;
         int length = word.length() - 1;
         while (length != 0) {
-            hash += mod((word.charAt(length) * (long) Math.pow(x, length)));
+            BigInteger var1 = BigInteger.valueOf((word.charAt(length)));
+            BigInteger varSpace1 = mod(var1);
+            BigInteger var2 = BigInteger.valueOf((long) Math.pow(x, length));
+            BigInteger varSpace2 = mod(var2);
+            BigInteger var3 = varSpace1.multiply(varSpace2);
+            BigInteger var4 = mod(var3);
+            hash += var4.intValue();
             length--;
         }
-        hash += mod((word.charAt(0)));
-        return (int) (hash % p) % size;
+        BigInteger lastElement = BigInteger.valueOf((word.charAt(0)));
+        BigInteger resultLastElement = mod(lastElement);
+        BigInteger myHash = BigInteger.valueOf(hash);
+        BigInteger resultHash = myHash.add(resultLastElement);
+        BigInteger resultHashModP = mod(resultHash);
+        BigInteger newSize = BigInteger.valueOf((long)size);
+        BigInteger resultHashModM = resultHashModP.mod(newSize);
+        return resultHashModM.intValue();
     }
 
-    private long mod(long number) {
-        return (number % p + p) % p;
+    private BigInteger mod(BigInteger number) {
+        BigInteger var1 = number.mod(bigP);
+        BigInteger var2 = var1.add(bigP);
+        BigInteger result = var2.mod(bigP);
+        return result;
     }
 }
 
