@@ -64,7 +64,9 @@ class Node {
     @Override
     public String toString() {
         return "Node{" +
-                "height=" + height +
+                "left=" + left +
+                ", right=" + right +
+                ", height=" + height +
                 ", key=" + key +
                 '}';
     }
@@ -94,12 +96,41 @@ class Tree {
         }
     }
 
+//    private Node reBalanceLeft(Node node) {
+//        Node newNode = node.getRight();
+//        node.setRight(newNode.getLeft());
+//        newNode.setLeft(node);
+//        return newNode;
+//    }
+//
+//    private Node reBalanceRight(Node node) {
+//        Node newNode = node.getLeft();
+//        node.setLeft(newNode.getRight());
+//        newNode.setRight(node);
+//        return newNode;
+//    }
+//
+//
+//    private void newBalance(Node node) {
+//        int difference = 0;
+//        do {
+//            difference = node.getRight().getHeight() - node.getLeft().getHeight();
+//            if (difference > 0) {
+//                node = reBalanceLeft(node);
+//            } else if (difference < 0) {
+//                node = reBalanceRight(node);
+//            }
+//            node = node.getParent();
+//        } while (node != null);
+//    }
+
+
     private int reHeight(Node node) {
         if (node == null) return 0;
         return 1 + Math.max(reHeight(node.getLeft()), reHeight(node.getRight()));
     }
 
-    public void newHeight(Node node){
+    public void newHeight(Node node) {
         do {
             node.setHeight(reHeight(node));
             node = node.getParent();
