@@ -64,9 +64,7 @@ class Node {
     @Override
     public String toString() {
         return "Node{" +
-                "left=" + left +
-                ", right=" + right +
-                ", height=" + height +
+                "height=" + height +
                 ", key=" + key +
                 '}';
     }
@@ -102,10 +100,10 @@ class Tree {
     }
 
     public void newHeight(Node node){
-        while (node.getParent() != null){
-            node.setHeight(reHeight(node.getParent()));
+        do {
+            node.setHeight(reHeight(node));
             node = node.getParent();
-        }
+        } while (node != null);
     }
 
     public Node findVacation(int key) {
