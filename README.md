@@ -10,5 +10,5 @@
 [08](https://github.com/megamott/JavaAlgorithms/blob/master/src/stepik_algorithms_structures/TelephoneBook.java) Телефонная книга.   
 [09](https://github.com/megamott/JavaAlgorithms/blob/master/src/stepik_algorithms_structures/ChainingHashTable.java) Хеширование цепочками.  
 
-## Разное.
+## Разное
 [01](https://github.com/megamott/JavaAlgorithms/blob/master/src/different_algorithms/AVLTree.java) AVL дерево.  
