@@ -10,5 +10,10 @@
 [08](https://github.com/megamott/JavaAlgorithms/blob/master/src/stepik_algorithms_structures/TelephoneBook.java) Телефонная книга.   
 [09](https://github.com/megamott/JavaAlgorithms/blob/master/src/stepik_algorithms_structures/ChainingHashTable.java) Хеширование цепочками.  
 
+## Задачи из курса ["Практикум по математике и Python."](https://stepik.org/lesson/184287/step/13?unit=161040)
+
+[01](https://github.com/megamott/Algorithms/blob/master/src/numpy_course/Borders.py) Матрица нулей с единицами на границе.  
+[02](https://github.com/megamott/Algorithms/blob/master/src/numpy_course/Chess.py) Матрица в виде шахматной доски из нулейи единиц. 
+
 ## Разное
 [01](https://github.com/megamott/JavaAlgorithms/blob/master/src/different_algorithms/AVLTree.java) AVL дерево.  
