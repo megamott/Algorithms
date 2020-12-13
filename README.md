@@ -16,7 +16,7 @@
 [02](https://github.com/megamott/Algorithms/blob/master/src/numpy_course/Chess.py) Матрица в виде шахматной доски из нулейи единиц. 
 
 ## Задачи из практике ["Практикум по HTML и CSS."](http://htmlbook.ru/practical)
-[01](https://github.com/megamott/Algorithms/blob/master/src/html_patterns/index.html) Батарейки [CSS](https://github.com/megamott/Algorithms/blob/master/src/html_patterns/css/style.css).  
+[01](https://github.com/megamott/Algorithms/blob/master/src/html_patterns/page_1.html) Батарейки [CSS](https://github.com/megamott/Algorithms/blob/master/src/html_patterns/css/style_1.css).  
 
 ## Разное
 [01](https://github.com/megamott/JavaAlgorithms/blob/master/src/different_algorithms/AVLTree.java) AVL дерево.  
