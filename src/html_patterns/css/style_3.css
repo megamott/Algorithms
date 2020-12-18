@@ -42,7 +42,6 @@ h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: 400;}
     width: 500px;
     height: 500px;
     background: url("https://i.pinimg.com/originals/0e/11/5f/0e115f13ab7832cbae43d9708f4f77d5.jpg") no-repeat;
-    z-index: auto;
     transform: rotate(-0.02turn);
 }
 
