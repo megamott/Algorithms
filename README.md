@@ -17,6 +17,8 @@
 
 ## Задачи по практике ["Практикум по HTML и CSS."](http://htmlbook.ru/practical)
 [01](https://github.com/megamott/Algorithms/blob/master/src/html_patterns/page_1.html) Батарейки [CSS](https://github.com/megamott/Algorithms/blob/master/src/html_patterns/css/style_1.css).  
+[02](https://github.com/megamott/Algorithms/blob/master/src/html_patterns/page_2.html) Рамка с вырезом [CSS](https://github.com/megamott/Algorithms/blob/master/src/html_patterns/css/style_2.css).  
+[03](https://github.com/megamott/Algorithms/blob/master/src/html_patterns/page_3.html) Перевернутая картинка [CSS](https://github.com/megamott/Algorithms/blob/master/src/html_patterns/css/style_3.css).  
 
 ## Разное
 [01](https://github.com/megamott/JavaAlgorithms/blob/master/src/different_algorithms/AVLTree.java) AVL дерево.  
