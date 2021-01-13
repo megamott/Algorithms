@@ -21,6 +21,9 @@ public class RedBlackTree {
 
         Tree.Node node5 = new Tree.Node(6);
         tree.addNode(node5);
+
+        System.out.println(tree.recursiveDeepGo(tree.getHead()));
+        System.out.println(tree.deepGo(tree.getHead()));
     }
 
 }
