@@ -21,5 +21,6 @@
 [03](https://github.com/megamott/Algorithms/blob/master/src/html_patterns/page_3.html) Перевернутая картинка [CSS](https://github.com/megamott/Algorithms/blob/master/src/html_patterns/css/style_3.css).  
 
 ## Разное
+
 [01](https://github.com/megamott/Algorithms/blob/master/src/different_algorithms/RedBlackTree.java) Красно-чёрное дерево с DFS и BFS.
 [02](https://github.com/megamott/JavaAlgorithms/blob/master/src/different_algorithms/AVLTree.java) AVL дерево.  
