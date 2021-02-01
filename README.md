@@ -23,5 +23,5 @@
 ## Разное
 
 [01](https://github.com/megamott/Algorithms/blob/master/src/different_algorithms/RedBlackTree.java) Красно-чёрное дерево с DFS и BFS.  
-[02](https://github.com/megamott/JavaAlgorithms/blob/master/src/different_algorithms/AVLTree.java) AVL дерево. 
-[03](https://github.com/megamott/Algorithms/blob/master/src/different_algorithms/FFTAlgorithm.py) Алгоритм Быстрого преобразования Фурье (Fast Fourier Transform). 
+[02](https://github.com/megamott/JavaAlgorithms/blob/master/src/different_algorithms/AVLTree.java) AVL дерево.  
+[03](https://github.com/megamott/Algorithms/blob/master/src/different_algorithms/FFTAlgorithm.py) Алгоритм Быстрого преобразования Фурье (Fast Fourier Transform).  
