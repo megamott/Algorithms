@@ -30,3 +30,4 @@
 [02](https://github.com/megamott/JavaAlgorithms/blob/master/src/different_algorithms/AVLTree.java) AVL дерево.  
 [03](https://github.com/megamott/Algorithms/blob/master/src/different_algorithms/FFTAlgorithm.py) Алгоритм Быстрого преобразования Фурье (Fast Fourier Transform).  
 [04](https://github.com/megamott/Algorithms/blob/master/src/different_algorithms/DefiniteIntegrals.kt) Вычисление определённых интегралов: базовые алгоритмы.  
+[05](https://github.com/megamott/Algorithms/blob/master/src/different_algorithms/finite_difference_coefficients.py) Определения конечно-разностных коэффициентов дифференциального уравнения.  
