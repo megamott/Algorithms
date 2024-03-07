@@ -54,5 +54,5 @@ if __name__ == '__main__':
     # quick_sort(array, 0, len(array) - 1)
     array = quick_sort_brute_force(array)
     print(time() - st)
-    # print(array)
+
 
